@@ -1,1 +1,1 @@
-web: go run main/server.go
+web: main/server.go
