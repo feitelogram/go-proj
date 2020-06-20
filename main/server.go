@@ -65,7 +65,7 @@ func thumbnailHandler(w http.ResponseWriter, r *http.Request) {
 
 	// Create a struct with the parameters needed to call the ScreenshotAPI.
 	apiRequest := screenshotAPIRequest{
-		Token:          os.Getenv("API_KEY"),
+		Token:          "HJW6EOS90WDHXXM5FDYZDUXFA8LJHID6",
 		URL:            decoded.URL,
 		Output:         "json",
 		Width:          1920,
