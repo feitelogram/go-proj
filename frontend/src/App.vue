@@ -46,6 +46,7 @@ export default {
       axios
         .post('http://localhost:3000/api/thumbnail', {
           url: this.websiteUrl,
+          headers: { 'Access-Control-Allow-Origin': '*' },
         })
         .then((response) => {
           this.thumbnailUrl = response.data.screenshot;
