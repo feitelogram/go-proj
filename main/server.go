@@ -17,7 +17,7 @@ func main() {
 
 	fmt.Println("Server listening on port 3000")
 	log.Panic(
-		http.ListenAndServe(":3000", nil),
+		http.ListenAndServe(os.Getenv("PORT"), nil),
 	)
 }
 
