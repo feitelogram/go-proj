@@ -17,8 +17,16 @@ func main() {
 
 	fmt.Println("Server listening on port 3000")
 	log.Panic(
-		http.ListenAndServe(":3000", nil),
+		http.ListenAndServe(getPort(), nil),
 	)
+}
+
+func getPort() string {
+	p := os.Getenv("PORT")
+	if p != "" {
+		return ":" + p
+	}
+	return ":3000"
 }
 
 func homePageHandler(w http.ResponseWriter, r *http.Request) {
