@@ -2,7 +2,7 @@
   <div id="app" class="container">
     <div class="row">
       <div class="col-md-6 offset-md-3 py-5">
-        <h1>Welcome to Take a Peek!</h1>
+        <h1>Welcome to Take A Peek!</h1>
         <br />
         <h3>
           Enter a URL below to see a screenshot of whatever website you'd like!
