@@ -31,6 +31,7 @@ func getPort() string {
 
 func homePageHandler(w http.ResponseWriter, r *http.Request) {
 	_, err := fmt.Fprintf(w, "hello world")
+	enableCors(&w)
 	checkError(err)
 }
 
@@ -38,6 +39,10 @@ func checkError(err error) {
 	if err != nil {
 		log.Panic(err)
 	}
+}
+
+func enableCors(w *http.ResponseWriter) {
+	(*w).Header().Set("Access-Control-Allow-Origin", "*")
 }
 
 type thumbnailRequest struct {
@@ -56,6 +61,8 @@ type screenshotAPIRequest struct {
 func thumbnailHandler(w http.ResponseWriter, r *http.Request) {
 	var decoded thumbnailRequest
 
+	enableCors(&w)
+
 	// Try to decode the request into the thumbnailRequest struct.
 	err := json.NewDecoder(r.Body).Decode(&decoded)
 	if err != nil {
@@ -65,7 +72,7 @@ func thumbnailHandler(w http.ResponseWriter, r *http.Request) {
 
 	// Create a struct with the parameters needed to call the ScreenshotAPI.
 	apiRequest := screenshotAPIRequest{
-		Token:          "HJW6EOS90WDHXXM5FDYZDUXFA8LJHID6",
+		Token:          os.Getenv("API_KEY"),
 		URL:            decoded.URL,
 		Output:         "json",
 		Width:          1920,
