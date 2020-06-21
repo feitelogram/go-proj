@@ -44,7 +44,7 @@ export default {
   methods: {
     makeWebsiteThumbnail() {
       axios
-        .post('http://localhost:3000/api/thumbnail', {
+        .post('take-a-peek.herokuapp.com/api/thumbnail', {
           url: this.websiteUrl,
           headers: { 'Access-Control-Allow-Origin': '*' },
         })
