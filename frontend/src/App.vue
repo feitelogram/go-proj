@@ -4,9 +4,9 @@
       <div class="col-md-6 offset-md-3 py-5">
         <h1>Welcome to Take A Peek!</h1>
         <br />
-        <h3>
+        <h5>
           Enter a URL below to see a screenshot of whatever website you'd like!
-        </h3>
+        </h5>
         <br />
         <form v-on:submit.prevent="makeWebsiteThumbnail">
           <div class="form-group">
