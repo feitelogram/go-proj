@@ -25,6 +25,9 @@
         <img :src="thumbnailUrl" />
       </div>
     </div>
+    <footer class="footer fixed-bottom text-center">
+      <p><strong>Created by Nicholas Feitel, 2020</strong></p>
+    </footer>
   </div>
 </template>
 
